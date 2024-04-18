@@ -1,0 +1,33 @@
+.nav_bg {
+  width: 100%;
+  overflow: scroll;
+  background-color: orange;
+}
+.nav_bg::-webkit-scrollbar {
+  display: none;
+}
+.nav_contact,
+.nav_mail,
+.nav_offer {
+  margin-left: 20px;
+  font-weight: bold;
+}
+.nav_icons {
+  text-align: center;
+  cursor: pointer;
+  white-space: nowrap;
+  animation: moveleft 15s linear infinite;
+}
+
+@keyframes moveleft {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
+}
+.paused {
+  animation-play-state: paused;
+}
