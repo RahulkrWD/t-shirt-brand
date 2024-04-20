@@ -1,0 +1,157 @@
+.custom {
+  background-image: linear-gradient(#000000c6, #000000bb),
+    url("/public/image/car1.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 450px;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: wheat;
+}
+.hr {
+  margin: 0;
+  color: #d87093c0;
+  background-color: #d87093c0;
+  opacity: 1;
+  height: 5px;
+}
+.h_tag {
+  font-size: 35px;
+}
+.p_tag {
+  width: 85%;
+  font-size: 20px;
+}
+
+/* Category */
+.category_container {
+  max-width: 1500px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.category_heading {
+  font-size: 30px;
+  text-align: center;
+  padding: 20px 0;
+  color: blueviolet;
+}
+
+.category_image {
+  width: 20vw;
+  height: 270px;
+  object-fit: fill;
+  margin: 0 25px 10px 0;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  box-shadow: 3px 3px 5px gray;
+}
+.category_image:hover {
+  box-shadow: 10px 10px 10px gray;
+}
+.category_price {
+  position: relative;
+  right: 10px;
+}
+
+/* Carousel */
+.carouselImage {
+  height: 600px;
+  transition: all 0.5s ease;
+}
+
+/* Trending  */
+.treding_items {
+  display: flex;
+  overflow: scroll;
+  gap: 40px;
+}
+.treding_items::-webkit-scrollbar {
+  display: none;
+}
+
+.treding_images {
+  width: 300px;
+  height: 350px;
+  border-radius: 15px;
+}
+
+@media (max-width: 900px) {
+  .h_tag {
+    font-size: 30px;
+  }
+  .p_tag {
+    font-size: 17px;
+  }
+  .category_image {
+    height: 230px;
+  }
+  .category_heading {
+    font-size: 25px;
+  }
+  .carouselImage {
+    height: 500px;
+  }
+}
+
+@media (max-width: 750px) {
+  .p_tag {
+    width: 100%;
+    font-size: 15px;
+  }
+  .h_tag {
+    font-size: 25px;
+  }
+  .custom {
+    padding: 10px;
+  }
+  .category_image {
+    width: 30vw;
+    height: 200px;
+  }
+  .carouselImage {
+    height: 450px;
+  }
+}
+
+@media (max-width: 550px) {
+  .p_tag {
+    font-size: 13px;
+  }
+  .h_tag {
+    font-size: 20px;
+  }
+  .custom {
+    padding: 10px 5px;
+  }
+  .custom {
+    height: 270px;
+  }
+  .category_image {
+    width: 150px;
+    height: 150px;
+  }
+  .category_heading {
+    padding: 10px 0;
+  }
+  .carouselImage {
+    height: 400px;
+  }
+}
+
+@media (max-width: 420px) {
+  .h_tag {
+    font-size: 15px;
+  }
+  .category_image {
+    margin: 0 15px 10px 0;
+  }
+  .carouselImage {
+    height: 300px;
+  }
+}

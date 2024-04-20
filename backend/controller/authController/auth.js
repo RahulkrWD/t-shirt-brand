@@ -7,8 +7,8 @@ const jwt = require("jsonwebtoken");
 const transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
-    user: "nova99brand@gmail.com",
-    pass: "vdyl renl xzzo adrl",
+    user: "rahulkrnodejs@gmail.com",
+    pass: "plnu vxnk hodz bxbw",
   },
 });
 
@@ -35,7 +35,7 @@ const registerController = async (req, res) => {
     const otp = generateOTP();
     otpStorage[email] = otp;
     const mailOptions = {
-      from: "nova99brand@gmail.com",
+      from: "rahulkrnodejs@gmail.com",
       to: email,
       subject: "Verify Your Email",
       text: `Your OTP is: ${otp}`,

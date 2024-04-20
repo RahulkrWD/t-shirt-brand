@@ -6,6 +6,7 @@ function PriceDetails({ price }) {
   const [coupon, setCoupon] = useState("");
   const [discount, setDiscount] = useState(0);
   const [totalPrice, setTotalPrice] = useState(0);
+  const delivery = 45;
 
   useEffect(() => {
     let total = price.reduce((acc, item) => acc + item.totalPrice, 0);
@@ -16,34 +17,36 @@ function PriceDetails({ price }) {
     function applyCoupon() {
       const matchedCoupon = coupons.find((c) => c.card === coupon);
       if (matchedCoupon && totalPrice >= 400) {
-        setDiscount(matchedCoupon.price);
+        setDiscount(totalPrice * (matchedCoupon.discount / 100));
       } else {
         setDiscount(0);
       }
     }
     applyCoupon();
-  });
+  }, [coupon, totalPrice]);
 
-  let delivery = totalPrice > 400 ? 0 : 35;
-  let finalPrice = totalPrice + delivery - discount;
-  const prices = [
-    {
+  const finalPrice = totalPrice + delivery - discount;
+  useEffect(() => {
+    const prices = {
       price: totalPrice,
       discount: discount,
       delivery: delivery,
       finalPrice: finalPrice,
-    },
-  ];
-
-  const storePrices = JSON.stringify(prices);
-  localStorage.setItem("price", storePrices);
-  localStorage.setItem("totalprice", finalPrice);
+    };
+    localStorage.setItem("price", JSON.stringify(prices));
+    localStorage.setItem("totalprice", finalPrice);
+  }, [totalPrice, discount, delivery, finalPrice]);
 
   const coupons = [
-    { card: "100DEP", price: 100, message: "Discount 100" },
-    { card: "50DEP", price: 50, message: "Discount 50" },
-    { card: "FIRSTDEP", price: 200, message: "Discount 100" },
+    { card: "100DEP", discount: 10, message: "Discount 10%" },
+    { card: "50DEP", discount: 5, message: "Discount 5%" },
+    { card: "FIRSTDEP", discount: 10, message: "Discount 10%" },
+    { card: "SAVE5NOW", discount: 5, message: "Discount 5%" },
   ];
+
+  const handleCouponChange = (e) => {
+    setCoupon(e.target.value);
+  };
 
   return (
     <div className={styles.price_details}>
@@ -52,19 +55,23 @@ function PriceDetails({ price }) {
         Price: <strong style={{ float: "right" }}>&#8377;{totalPrice}</strong>
       </p>
       <p className="border-bottom p-1">
-        Discount: <strong style={{ float: "right" }}>&#8377;{discount}</strong>
+        Discount:{" "}
+        <strong style={{ float: "right" }}>&#8377;{discount.toFixed(2)}</strong>
       </p>
       <p className="border-bottom p-1">
         Delivery: <strong style={{ float: "right" }}> &#8377;{delivery}</strong>
       </p>
       <p className="p-1">
         Final Price:
-        <strong style={{ float: "right" }}>&#8377;{finalPrice}</strong>
+        <strong style={{ float: "right" }}>
+          &#8377;{finalPrice.toFixed(2)}
+        </strong>
       </p>
       <TextField
-        onChange={(e) => setCoupon(e.target.value)}
+        value={coupon}
+        onChange={handleCouponChange}
         id="standard-basic"
-        label="Coupons"
+        label="Enter Coupon Code"
         variant="standard"
         fullWidth
       />
