@@ -133,8 +133,16 @@ function TrendingItems() {
   ];
 
   return (
-    <div style={{ backgroundColor: "pink", paddingBottom: "50px" }}>
-      <h4 className="text-center p-3">Treding Design</h4>
+    <section
+      id="trending"
+      style={{ backgroundColor: "pink", paddingBottom: "50px" }}
+    >
+      <h4
+        className="text-center "
+        style={{ color: "blueviolet", padding: "15px 0" }}
+      >
+        Trending Design
+      </h4>
       <div className={`container ${styles.treding_items}`}>
         {trending.map((items, index) => (
           <Link key={index} className={styles.product}>
@@ -160,7 +168,7 @@ function TrendingItems() {
           </Link>
         ))}
       </div>
-    </div>
+    </section>
   );
 }
 

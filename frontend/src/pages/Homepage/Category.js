@@ -23,7 +23,7 @@ function Category() {
   ];
 
   return (
-    <div className="p-2" style={{ backgroundColor: "pink" }}>
+    <section id="category" className="p-2" style={{ backgroundColor: "pink" }}>
       <h4 className={styles.category_heading}>Category</h4>
       <div className={styles.category_container}>
         {category.map((data, index) => (
@@ -39,7 +39,7 @@ function Category() {
           </Link>
         ))}
       </div>
-    </div>
+    </section>
   );
 }
 

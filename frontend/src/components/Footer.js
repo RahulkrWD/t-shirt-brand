@@ -11,17 +11,14 @@ function Footer() {
         All Right Reserved &copy; Developer 2024.
       </h3>
       <p className="text-center m-3 footer">
-        <Link className="m-1 text-decoration-none text-light" to={"/about"}>
+        <a className="m-1 text-decoration-none text-light" href="#about">
           About
-        </Link>
+        </a>
         |
-        <Link className="m-1 text-decoration-none text-light" to={"/contact"}>
+        <a className="m-1 text-decoration-none text-light" href="#contact">
           Contact
-        </Link>
+        </a>
         |
-        <Link className="m-1 text-decoration-none text-light" to={"/policy"}>
-          Policy
-        </Link>
       </p>
     </div>
   );

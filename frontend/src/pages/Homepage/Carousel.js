@@ -22,21 +22,23 @@ function ImageCarousel() {
   }, [images.length]);
 
   return (
-    <Carousel
+    <section
+      id="gallery"
       style={{ backgroundColor: "pink", paddingTop: "30px" }}
-      activeIndex={index}
-      controls={false}
     >
-      {images.map((imageUrl, index) => (
-        <Carousel.Item key={index}>
-          <img
-            className={`${styles.carouselImage} d-block w-100`}
-            src={imageUrl}
-            alt={`Slide ${index + 1}`}
-          />
-        </Carousel.Item>
-      ))}
-    </Carousel>
+      <h2 className="text-center">Gallery</h2>
+      <Carousel activeIndex={index} controls={false}>
+        {images.map((imageUrl, index) => (
+          <Carousel.Item key={index}>
+            <img
+              className={`${styles.carouselImage} d-block w-100`}
+              src={imageUrl}
+              alt={`Slide ${index + 1}`}
+            />
+          </Carousel.Item>
+        ))}
+      </Carousel>
+    </section>
   );
 }
 

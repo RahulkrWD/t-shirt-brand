@@ -5,10 +5,15 @@ import Category from "./Category";
 import styles from "./styles/Homepage.module.css";
 import WhatsApp from "./WhataApp";
 import TrendingItems from "./TrendingItems";
+import Section from "./Section";
+import About from "./About";
+import WhyUs from "./WhyUs";
+import Contact from "./Contact";
 
 function Homepage() {
   return (
     <Layout>
+      <Section />
       <div className={styles.custom}>
         <center>
           <h5 className={`text-center p-2 fw-bold ${styles.h_tag}`}>
@@ -31,6 +36,12 @@ function Homepage() {
       <TrendingItems />
       <hr className={styles.hr} />
       <ImageCarousel />
+      <hr className={styles.hr} />
+      <About />
+      <hr className={styles.hr} />
+      <WhyUs />
+      <hr className={styles.hr} />
+      <Contact />
     </Layout>
   );
 }
