@@ -3,12 +3,12 @@ import Layout from "../../components/Layout";
 import ImageCarousel from "./Carousel";
 import Category from "./Category";
 import styles from "./styles/Homepage.module.css";
-import WhatsApp from "./WhataApp";
+import WhatsApp from "./WhatsApp";
 import TrendingItems from "./TrendingItems";
 import Section from "./Section";
 import About from "./About";
-import WhyUs from "./WhyUs";
 import Contact from "./Contact";
+import Services from "./Services";
 
 function Homepage() {
   return (
@@ -37,9 +37,9 @@ function Homepage() {
       <hr className={styles.hr} />
       <ImageCarousel />
       <hr className={styles.hr} />
-      <About />
+      <Services />
       <hr className={styles.hr} />
-      <WhyUs />
+      <About />
       <hr className={styles.hr} />
       <Contact />
     </Layout>

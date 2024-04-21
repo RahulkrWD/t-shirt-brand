@@ -24,14 +24,6 @@ function Section() {
         <li>
           <a
             className="text-decoration-none text-light fw-bold p-2"
-            href="#why"
-          >
-            Why Us
-          </a>
-        </li>
-        <li>
-          <a
-            className="text-decoration-none text-light fw-bold p-2"
             href="#gallery"
           >
             Gallery
@@ -52,6 +44,14 @@ function Section() {
             href="#trending"
           >
             Trending
+          </a>
+        </li>
+        <li>
+          <a
+            className="text-decoration-none text-light fw-bold p-2"
+            href="#services"
+          >
+            Services
           </a>
         </li>
       </ul>
