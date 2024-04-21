@@ -22,7 +22,11 @@ function ImageCarousel() {
   }, [images.length]);
 
   return (
-    <Carousel activeIndex={index} controls={false}>
+    <Carousel
+      style={{ backgroundColor: "pink", paddingTop: "30px" }}
+      activeIndex={index}
+      controls={false}
+    >
       {images.map((imageUrl, index) => (
         <Carousel.Item key={index}>
           <img

@@ -43,7 +43,7 @@
 }
 
 .category_image {
-  width: 20vw;
+  width: 17vw;
   height: 270px;
   object-fit: fill;
   margin: 0 25px 10px 0;
@@ -71,16 +71,51 @@
   overflow: scroll;
   gap: 40px;
 }
+
 .treding_items::-webkit-scrollbar {
   display: none;
 }
-
-.treding_images {
-  width: 300px;
-  height: 350px;
-  border-radius: 15px;
+.product {
+  text-decoration: none;
+  color: black;
+  border: 2px solid gainsboro;
+  border-radius: 7px;
+  transition: all 0.3s ease;
 }
 
+.product:hover {
+  opacity: 0.9;
+  transform: scale(0.9);
+}
+
+.treding_images {
+  width: 250px;
+  height: 250px;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+}
+.brand_name {
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+.items_name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 230px;
+  font-size: 14px;
+}
+.del_price,
+.main_price {
+  color: #444242;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 1000px) {
+  .category_image {
+    height: 220px;
+  }
+}
 @media (max-width: 900px) {
   .h_tag {
     font-size: 30px;
@@ -88,14 +123,30 @@
   .p_tag {
     font-size: 17px;
   }
-  .category_image {
-    height: 230px;
-  }
+
   .category_heading {
     font-size: 25px;
   }
   .carouselImage {
     height: 500px;
+  }
+  .treding_images {
+    width: 220px;
+    height: 220px;
+  }
+  .items_name {
+    width: 200px;
+    font-size: 13px;
+  }
+  .del_price,
+  .main_price {
+    font-size: 15px;
+  }
+  .items_offer {
+    font-size: 15px;
+  }
+  .treding_items {
+    gap: 30px;
   }
 }
 
@@ -116,6 +167,24 @@
   }
   .carouselImage {
     height: 450px;
+  }
+  .treding_images {
+    width: 200px;
+    height: 200px;
+  }
+  .items_name {
+    width: 180px;
+  }
+  .del_price,
+  .main_price {
+    font-size: 14px;
+    letter-spacing: normal;
+  }
+  .items_offer {
+    font-size: 14px;
+  }
+  .treding_items {
+    gap: 20px;
   }
 }
 
@@ -142,6 +211,16 @@
   .carouselImage {
     height: 400px;
   }
+  .treding_images {
+    width: 180px;
+    height: 180px;
+  }
+  .items_name {
+    width: 160px;
+  }
+  .items_offer {
+    font-size: 13px;
+  }
 }
 
 @media (max-width: 420px) {
@@ -153,5 +232,12 @@
   }
   .carouselImage {
     height: 300px;
+  }
+  .treding_images {
+    width: 160px;
+    height: 160px;
+  }
+  .items_name {
+    width: 140px;
   }
 }
