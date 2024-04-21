@@ -1,0 +1,14 @@
+.contact_container {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 20px;
+  flex-wrap: wrap;
+}
+
+.message_container {
+  width: 500px;
+  padding: 20px;
+}
+.message_input {
+  box-shadow: 5px 5px 5px lightcoral;
+}
