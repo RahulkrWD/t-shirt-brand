@@ -6,8 +6,5 @@
 }
 
 body::-webkit-scrollbar {
-  width: 7px;
-}
-body::-webkit-scrollbar-thumb {
-  background-color: orange;
+  display: none;
 }
