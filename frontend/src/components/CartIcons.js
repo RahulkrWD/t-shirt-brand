@@ -18,7 +18,7 @@ export default function Cart() {
   const cartItems = useSelector(selectCartItems);
   const itemCount = cartItems.reduce((total, item) => total + item.quantity, 0);
   return (
-    <IconButton aria-label="cart" className="text-dark">
+    <IconButton aria-label="cart" className="text-light">
       <StyledBadge badgeContent={itemCount} color="secondary">
         <ShoppingCartIcon />
       </StyledBadge>

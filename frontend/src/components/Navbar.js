@@ -11,7 +11,8 @@ import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import SearchIcon from "@mui/icons-material/Search";
 import AccountCircle from "@mui/icons-material/AccountCircle";
-import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import CartIcons from "./CartIcons";
+import { Link, useNavigate } from "react-router-dom";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -49,7 +50,15 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 export default function PrimarySearchAppBar() {
+  const navigate = useNavigate();
   const [anchorEl, setAnchorEl] = React.useState(null);
+  const user = JSON.parse(localStorage.getItem("auth"));
+
+  const handleLogout = () => {
+    localStorage.removeItem("auth");
+    navigate("/login");
+    handleMenuClose();
+  };
 
   const handleProfileMenuOpen = (event) => {
     setAnchorEl(event.currentTarget);
@@ -76,26 +85,59 @@ export default function PrimarySearchAppBar() {
       open={Boolean(anchorEl)}
       onClose={handleMenuClose}
     >
-      <MenuItem onClick={handleMenuClose}>Login</MenuItem>
-      <MenuItem onClick={handleMenuClose}>Register</MenuItem>
+      {user ? (
+        <>
+          <MenuItem onClick={handleMenuClose}>
+            <Link
+              to="/profile"
+              style={{ textDecoration: "none", color: "inherit" }}
+            >
+              Profile
+            </Link>
+          </MenuItem>
+          <MenuItem onClick={handleMenuClose}>
+            <Link
+              to="/my-orders"
+              style={{ textDecoration: "none", color: "inherit" }}
+            >
+              My Orders
+            </Link>
+          </MenuItem>
+          <MenuItem onClick={handleLogout}>Logout</MenuItem>
+        </>
+      ) : (
+        <>
+          <MenuItem onClick={handleMenuClose}>
+            <Link
+              to="/login"
+              style={{ textDecoration: "none", color: "inherit" }}
+            >
+              Login
+            </Link>
+          </MenuItem>
+          <MenuItem onClick={handleMenuClose}>
+            <Link
+              to="/register"
+              style={{ textDecoration: "none", color: "inherit" }}
+            >
+              Register
+            </Link>
+          </MenuItem>
+        </>
+      )}
     </Menu>
   );
-  const getAbbreviatedTitle = () => {
-    const title = "Nova";
-    const maxWidth = 400;
-    if (window.innerWidth < maxWidth) {
-      return title.charAt(0);
-    }
-    return title;
-  };
 
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar>
           <Typography variant="h6" noWrap component="div" sx={{ flexGrow: 1 }}>
-            {getAbbreviatedTitle()}
+            <Link className="text-light text-decoration-none" to={"/homepage"}>
+              Nova
+            </Link>
           </Typography>
+
           <Search>
             <SearchIconWrapper>
               <SearchIcon />
@@ -105,20 +147,46 @@ export default function PrimarySearchAppBar() {
               inputProps={{ "aria-label": "search" }}
             />
           </Search>
-          <IconButton size="large" aria-label="show cart" color="inherit">
-            <ShoppingCartIcon />
-          </IconButton>
+
+          <Link to={"/cart"}>
+            <CartIcons />
+          </Link>
+
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
-            <Button color="inherit" onClick={handleProfileMenuOpen}>
-              Login
-            </Button>
-            <Button color="inherit" onClick={handleProfileMenuOpen}>
-              Register
-            </Button>
+            {user ? (
+              <IconButton
+                edge="end"
+                aria-label="account of current user"
+                aria-controls={menuId}
+                aria-haspopup="true"
+                onClick={handleProfileMenuOpen}
+                color="inherit"
+              >
+                {user.user.name.split(" ")[0]}
+              </IconButton>
+            ) : (
+              <>
+                <Button color="inherit">
+                  <Link
+                    to="/login"
+                    style={{ textDecoration: "none", color: "inherit" }}
+                  >
+                    Login
+                  </Link>
+                </Button>
+                <Button color="inherit">
+                  <Link
+                    to="/register"
+                    style={{ textDecoration: "none", color: "inherit" }}
+                  >
+                    Register
+                  </Link>
+                </Button>
+              </>
+            )}
           </Box>
           <Box sx={{ display: { xs: "flex", md: "none" } }}>
             <IconButton
-              size="large"
               edge="end"
               aria-label="account of current user"
               aria-controls={menuId}
@@ -126,7 +194,13 @@ export default function PrimarySearchAppBar() {
               onClick={handleProfileMenuOpen}
               color="inherit"
             >
-              <AccountCircle />
+              {user ? (
+                <>{user.user.name.charAt(0).toUpperCase()}</>
+              ) : (
+                <>
+                  <AccountCircle />
+                </>
+              )}
             </IconButton>
           </Box>
         </Toolbar>
