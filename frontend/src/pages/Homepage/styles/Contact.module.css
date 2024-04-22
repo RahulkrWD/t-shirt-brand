@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-evenly;
   padding: 20px;
-  flex-wrap: wrap;
+  flex-wrap: wrap-reverse;
 }
 
 .message_container {
