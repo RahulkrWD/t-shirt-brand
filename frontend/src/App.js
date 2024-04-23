@@ -10,6 +10,7 @@ import Profile from "./pages/my-profile/Profile";
 import MyOrder from "./pages/my-order/MyOrder";
 import Cart from "./pages/cart/Cart";
 import Details from "./pages/details/Details";
+import Listing from "./pages/Listing/Listing";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -34,7 +35,8 @@ function App() {
         <Route path="/profile" element={<Profile />} />
         <Route path="/My-order" element={<MyOrder />} />
         <Route path="/cart" element={<Cart />} />
-        <Route path="/product/:id" element={<Details />} />
+        <Route path="/details/:id" element={<Details />} />
+        <Route path="/products" element={<Listing />} />
       </Routes>
 
       <ScrollToTop />

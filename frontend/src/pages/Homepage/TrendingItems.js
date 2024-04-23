@@ -18,7 +18,7 @@ function TrendingItems() {
       <div className={`container ${styles.treding_items}`}>
         {trendingItems.map((items, index) => (
           <Link
-            to={`/product/${items.productId}`}
+            to={`/details/${items.productId}`}
             key={index}
             className={styles.product}
           >
