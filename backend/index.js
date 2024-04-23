@@ -3,6 +3,7 @@ const dotenv = require("dotenv");
 const connectDB = require("./db");
 const authRoute = require("./routes/authRoute");
 const cors = require("cors");
+const product = require("./routes/Product");
 
 const app = express();
 app.use(express.json());
@@ -16,6 +17,7 @@ app.get("/", async function (req, res) {
 
 // auth router
 app.use("/auth", authRoute);
+app.use("/product", product);
 
 const PORT = process.env.PORT;
 app.listen(PORT, console.log(`server running on PORT ${PORT}`));
