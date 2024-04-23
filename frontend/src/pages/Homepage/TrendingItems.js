@@ -17,7 +17,11 @@ function TrendingItems() {
       </h4>
       <div className={`container ${styles.treding_items}`}>
         {trendingItems.map((items, index) => (
-          <Link key={index} className={styles.product}>
+          <Link
+            to={`/product/${items.productId}`}
+            key={index}
+            className={styles.product}
+          >
             <div className="trending image">
               <img className={styles.treding_images} src={items.image} alt="" />
             </div>

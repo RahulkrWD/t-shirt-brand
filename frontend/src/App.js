@@ -9,6 +9,7 @@ import PageNotFound from "./components/PageNotFound";
 import Profile from "./pages/my-profile/Profile";
 import MyOrder from "./pages/my-order/MyOrder";
 import Cart from "./pages/cart/Cart";
+import Details from "./pages/details/Details";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -27,13 +28,13 @@ function App() {
         <Route path="/" element={<Popup />} />
         <Route path="/*" element={<PageNotFound />} />
         <Route path="/homepage" element={<Homepage />} />
-        <Route path="/homepage" element={<Homepage />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/forget-password" element={<Forgetpassword />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/My-order" element={<MyOrder />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/product/:id" element={<Details />} />
       </Routes>
 
       <ScrollToTop />
