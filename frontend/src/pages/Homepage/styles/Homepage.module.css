@@ -105,6 +105,8 @@
 .brand_name {
   font-weight: bold;
   letter-spacing: 1px;
+  font-size: 14px;
+  font-style: italic;
 }
 .items_name {
   white-space: nowrap;
@@ -115,7 +117,7 @@
 }
 .del_price,
 .main_price {
-  color: #444242;
+  color: #6c6969;
   letter-spacing: 1px;
 }
 
@@ -203,7 +205,6 @@
   .del_price,
   .main_price {
     font-size: 14px;
-    letter-spacing: normal;
   }
   .items_offer {
     font-size: 14px;

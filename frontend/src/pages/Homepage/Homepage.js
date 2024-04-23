@@ -1,7 +1,7 @@
 import React from "react";
 import Layout from "../../components/Layout";
 import ImageCarousel from "./Carousel";
-import Category from "./Category";
+// import Category from "./Category";
 import styles from "./styles/Homepage.module.css";
 import WhatsApp from "./WhatsApp";
 import TrendingItems from "./TrendingItems";
@@ -31,8 +31,8 @@ function Homepage() {
         </center>
       </div>
       <hr className={styles.hr} />
-      <Category />
-      <hr className={styles.hr} />
+      {/* <Category />
+      <hr className={styles.hr} /> */}
       <TrendingItems />
       <hr className={styles.hr} />
       <ImageCarousel />

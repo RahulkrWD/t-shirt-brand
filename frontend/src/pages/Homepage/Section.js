@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./styles/Homepage.module.css";
+import { Link } from "react-router-dom";
 
 function Section() {
   return (
@@ -31,12 +32,12 @@ function Section() {
         </li>
 
         <li>
-          <a
+          <Link
             className="text-decoration-none text-light fw-bold p-2"
-            href="#category"
+            to={"/products"}
           >
-            Category
-          </a>
+            All Products
+          </Link>
         </li>
         <li>
           <a

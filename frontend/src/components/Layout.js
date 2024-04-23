@@ -46,7 +46,6 @@ function Layout({ children }) {
           z-index: 1000;
         }
       `}</style>
-
       <Navbar />
       <main style={{ minHeight: "50vh" }}>
         {children} <Toaster />

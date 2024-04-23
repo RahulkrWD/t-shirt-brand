@@ -22,20 +22,21 @@ function TrendingItems() {
               <img className={styles.treding_images} src={items.image} alt="" />
             </div>
             <div className="product details p-2 bg-light">
+              <h6 className={`text-danger ${styles.brand_name}`}>Nova@</h6>
+              <h6 className={styles.items_name}>{items.productName}</h6>
               <div className="d-flex justify-content-between">
-                <h6 className={styles.brand_name}>Nova@</h6>
-                <i className="fa-regular fa-heart"></i>
-              </div>
-              <h6 className={styles.items_name}>{items.name}</h6>
-              <div className="d-flex justify-content-between">
-                <span className={`fw-bold text-dark ${styles.main_price}`}>
+                <span className={`fw-bold text-success ${styles.main_price}`}>
                   &#8377;{items.price - (items.price * items.offer) / 100}
                 </span>
                 <del className={styles.del_price}>&#8377;{items.price}</del>
-                <span className={styles.items_offer}>{items.offer}% Off</span>
+                <span className={`text-primary fw-bold ${styles.items_offer}`}>
+                  {items.offer}% Off
+                </span>
               </div>
 
-              <h6>{items.rating}</h6>
+              <h6 className="text-bg-success btn">
+                <i className="fa-solid text-warning fa-star"></i> {items.rating}
+              </h6>
             </div>
           </Link>
         ))}
