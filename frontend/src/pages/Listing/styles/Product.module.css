@@ -1,15 +1,10 @@
-.treding_items {
-  display: flex;
-  gap: 40px;
-}
-
 .treding_items::-webkit-scrollbar {
   display: none;
 }
 .product {
+  padding: 20px;
   text-decoration: none;
   color: black;
-  border: 2px solid gainsboro;
   border-radius: 7px;
   transition: all 0.3s ease;
 }

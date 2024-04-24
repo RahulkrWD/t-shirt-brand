@@ -4,6 +4,7 @@ import axios from "axios";
 import Loading from "../../components/Loading";
 import Product from "./Product";
 import Filter from "./Filter";
+import styles from "./styles/Listing.module.css";
 
 function Listing() {
   const [products, setProducts] = useState([]);
@@ -24,8 +25,11 @@ function Listing() {
 
   return (
     <Layout>
-      <div className="listing d-flex">
-        <div>
+      <div className="listing d-flex container">
+        <div className="filter">
+          <Filter setProducts={setProducts} />
+        </div>
+        <div className={styles.listing_product}>
           {products ? (
             products.map((item, index) => (
               <div className="product" key={index}>
@@ -35,9 +39,6 @@ function Listing() {
           ) : (
             <Loading />
           )}
-        </div>
-        <div className="filter">
-          <Filter setProducts={setProducts} />
         </div>
       </div>
     </Layout>

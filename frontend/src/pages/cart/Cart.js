@@ -54,11 +54,15 @@ export default function AddCart() {
             cartItems.map((items, index) => (
               <div key={index} className={styles.cart_container}>
                 <div className="cart image">
-                  <img className={styles.cart_image} src={items.image} alt="" />
+                  <img
+                    className={styles.cart_image}
+                    src={items.images}
+                    alt=""
+                  />
                 </div>
                 <div className="cart details">
                   <p className={styles.product_name}>{items.productName}</p>
-                  <p className="fw-bold">price: &#8377;{items.totalPrice}</p>
+                  <p className="fw-bold">price: &#8377;{items.price}</p>
                   <div className="d-flex justify-content-evenly">
                     <span
                       className="fs-5"
