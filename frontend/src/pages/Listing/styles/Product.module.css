@@ -1,20 +1,4 @@
-.treding_items::-webkit-scrollbar {
-  display: none;
-}
-.product {
-  padding: 20px;
-  text-decoration: none;
-  color: black;
-  border-radius: 7px;
-  transition: all 0.3s ease;
-}
-
-.product:hover {
-  opacity: 0.9;
-  transform: scale(0.9);
-}
-
-.treding_images {
+.product_images {
   width: 250px;
   height: 250px;
   border-top-left-radius: 7px;

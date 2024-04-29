@@ -4,9 +4,12 @@ import styles from "./styles/Product.module.css";
 
 function Product({ product }) {
   return (
-    <Link to={`/details/${product.productId}`} className={styles.product}>
-      <div className="trending image">
-        <img className={styles.treding_images} src={product.images} alt="" />
+    <Link
+      to={`/details/${product.productId}`}
+      className="text-decoration-none text-dark"
+    >
+      <div className="product image">
+        <img className={styles.product_images} src={product.images} alt="" />
       </div>
       <div className="product details p-2 bg-light">
         <h6 className={`text-danger ${styles.brand_name}`}>Nova@</h6>

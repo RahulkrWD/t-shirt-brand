@@ -13,12 +13,12 @@ export const cartSlice = createSlice({
       );
       if (existingItem) {
         existingItem.quantity++;
-        existingItem.totalPrice = existingItem.quantity * existingItem.cost;
+        existingItem.totalPrice = existingItem.quantity * existingItem.price;
       } else {
         state.items.push({
           ...action.payload,
           quantity: 1,
-          totalPrice: action.payload.cost,
+          totalPrice: action.payload.price,
         });
       }
       localStorage.setItem("cartItems", JSON.stringify(state.items));
@@ -29,7 +29,7 @@ export const cartSlice = createSlice({
       );
       if (item) {
         item.quantity++;
-        item.totalPrice = item.quantity * item.cost;
+        item.totalPrice = item.quantity * item.price;
         localStorage.setItem("cartItems", JSON.stringify(state.items));
       }
     },
@@ -39,7 +39,7 @@ export const cartSlice = createSlice({
       );
       if (item && item.quantity > 1) {
         item.quantity--;
-        item.totalPrice = item.quantity * item.cost;
+        item.totalPrice = item.quantity * item.price;
         localStorage.setItem("cartItems", JSON.stringify(state.items));
       }
     },

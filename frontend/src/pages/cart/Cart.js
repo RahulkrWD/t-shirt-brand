@@ -62,7 +62,7 @@ export default function AddCart() {
                 </div>
                 <div className="cart details">
                   <p className={styles.product_name}>{items.productName}</p>
-                  <p className="fw-bold">price: &#8377;{items.price}</p>
+                  <p className="fw-bold">price: &#8377;{items.totalPrice}</p>
                   <div className="d-flex justify-content-evenly">
                     <span
                       className="fs-5"
