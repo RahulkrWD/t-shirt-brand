@@ -22,10 +22,7 @@ function ImageCarousel() {
   }, [images.length]);
 
   return (
-    <section
-      id="gallery"
-      style={{ backgroundColor: "pink", paddingTop: "30px" }}
-    >
+    <section id="gallery" style={{ paddingTop: "30px" }}>
       <h2 className="text-center">Gallery</h2>
       <Carousel activeIndex={index} controls={false}>
         {images.map((imageUrl, index) => (

@@ -9,17 +9,9 @@ function Section() {
         <li>
           <a
             className="text-decoration-none text-light fw-bold p-2"
-            href="#contact"
+            href="#trending"
           >
-            Contact
-          </a>
-        </li>
-        <li>
-          <a
-            className="text-decoration-none text-light fw-bold p-2"
-            href="#about"
-          >
-            About Us
+            Trending
           </a>
         </li>
         <li>
@@ -30,7 +22,6 @@ function Section() {
             Gallery
           </a>
         </li>
-
         <li>
           <Link
             className="text-decoration-none text-light fw-bold p-2"
@@ -42,17 +33,25 @@ function Section() {
         <li>
           <a
             className="text-decoration-none text-light fw-bold p-2"
-            href="#trending"
+            href="#services"
           >
-            Trending
+            Services
           </a>
         </li>
         <li>
           <a
             className="text-decoration-none text-light fw-bold p-2"
-            href="#services"
+            href="#contact"
           >
-            Services
+            Contact
+          </a>
+        </li>
+        <li>
+          <a
+            className="text-decoration-none text-light fw-bold p-2"
+            href="#about"
+          >
+            About Us
           </a>
         </li>
       </ul>

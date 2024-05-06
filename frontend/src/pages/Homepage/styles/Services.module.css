@@ -1,7 +1,9 @@
 .Services_container {
+  height: 100vh;
   margin: 0 50px;
   display: flex;
   overflow: scroll;
+  align-items: center;
   gap: 100px;
   padding: 30px 20px;
   transition: all o.4s ease;
@@ -10,11 +12,11 @@
   display: none;
 }
 .services_items {
-  border: 3px solid burlywood;
   border-radius: 10px;
-  box-shadow: 20px 20px 10px palevioletred, -5px -5px 5px palevioletred;
   background-color: white;
+  box-shadow: 10px 10px 5px gray, -2px -2px 5px gray;
   padding: 10px;
+  height: fit-content;
 }
 .Services_image {
   width: 400px;
@@ -55,6 +57,12 @@
   .services_items {
     padding: 5px;
   }
+  .Services_container {
+    height: 90vh;
+  }
+  .Services_container {
+    height: 80vh;
+  }
 }
 @media (max-width: 450px) {
   .Services_image {
@@ -65,6 +73,7 @@
     margin: 0 7px;
     gap: 30px;
     padding: 10px 10px 20px 10px;
+    height: 70vh;
   }
   .items_summary {
     font-size: 13px;

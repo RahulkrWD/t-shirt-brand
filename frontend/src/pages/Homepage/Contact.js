@@ -4,7 +4,7 @@ import TextField from "@mui/material/TextField";
 
 function Contact() {
   return (
-    <section id="contact" style={{ backgroundColor: "pink" }}>
+    <section id="contact">
       <h4 className="text-center p-2">Contact Us</h4>
       <div className={styles.contact_container}>
         <div className="contact">

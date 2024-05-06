@@ -5,9 +5,6 @@
   font-family: sans-serif;
 }
 
-body {
-  background-color: pink;
-}
 body::-webkit-scrollbar {
   display: none;
 }

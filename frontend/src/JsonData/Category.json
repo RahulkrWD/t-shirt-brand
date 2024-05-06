@@ -1,0 +1,40 @@
+[
+    {
+       
+        "categoryId:" : 1,
+        "name": "Regular Fit T-Shirt",
+        "image": "https://i.ibb.co/D1Fpft4/i10.webp"
+    },
+    {
+        "categoryId:" : 2,
+        "name": "Henley T-Shirt",
+        "image": "https://i.ibb.co/rsNK7hH/s1.webp"
+    },{
+        "categoryId:" : 3,
+        "name": "Women's Crop Top",
+        "image": "https://i.ibb.co/9ZzgKtm/crop.webp"
+    },{
+        "categoryId:" : 5,
+        "name": "Oversized T-Shirt",
+        "image": "https://i.ibb.co/BzLJ6xH/over.webp"
+    },
+    {
+        "categoryId:" : 6,
+        "name": "Polo T-Shirt",
+        "image": "https://i.ibb.co/LrHGbqq/polo.webp"
+    },{
+        "categoryId:" : 7,
+        "name": "Full Sleeve T-Shirt",
+        "image": "https://i.ibb.co/ygNwyY6/full.webp"
+    },
+    {
+        "categoryId:" : 8,
+        "name": "Sweatshirt",
+        "image": "https://i.ibb.co/b2JBbDm/sweat.webp"
+    }
+]
+
+
+
+
+

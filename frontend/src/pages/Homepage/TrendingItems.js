@@ -5,22 +5,19 @@ import trendingItems from "../../JsonData/TrendingItems.json";
 
 function TrendingItems() {
   return (
-    <section
-      id="trending"
-      style={{ backgroundColor: "pink", paddingBottom: "50px" }}
-    >
+    <section id="trending" style={{ paddingBottom: "25px" }}>
       <h4
         className="text-center "
-        style={{ color: "blueviolet", padding: "15px 0" }}
+        style={{ color: "blueviolet", padding: "20px 0" }}
       >
         Trending Design
       </h4>
-      <div className={`container ${styles.treding_items}`}>
+      <div className={` ${styles.trending_items}`}>
         {trendingItems.map((items, index) => (
           <Link
             to={`/details/${items.productId}`}
             key={index}
-            className={styles.product}
+            className={styles.trending_product}
           >
             <div className="trending image">
               <img className={styles.treding_images} src={items.image} alt="" />

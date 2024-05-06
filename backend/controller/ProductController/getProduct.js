@@ -1,4 +1,4 @@
-const productModel = require("../../model/product");
+const TshirtModel = require("../../model/TShirt");
 
 async function getproduct(req, res) {
   let query = {};
@@ -7,7 +7,7 @@ async function getproduct(req, res) {
     query = { productId: id };
   }
   try {
-    const getItems = await productModel.find(query);
+    const getItems = await TshirtModel.find(query);
     res.send(getItems);
   } catch (err) {
     console.log("server error", err);

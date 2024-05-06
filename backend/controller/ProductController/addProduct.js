@@ -1,6 +1,6 @@
-const productModel = require("../../model/product");
+const TshirtModel = require("../../model/TShirt");
 
-async function allProduct(req, res) {
+async function AllTshirt(req, res) {
   let query = {};
   let hcost = +req.query.hcost;
   let lcost = +req.query.lcost;
@@ -17,11 +17,11 @@ async function allProduct(req, res) {
   };
   const sortQuery = sortOption[sort] || {};
   try {
-    const findAll = await productModel.find(query).sort(sortQuery);
+    const findAll = await TshirtModel.find(query).sort(sortQuery);
     res.send(findAll);
   } catch (err) {
     console.log("server error", err);
   }
 }
 
-module.exports = allProduct;
+module.exports = AllTshirt;

@@ -1,7 +1,6 @@
 import React from "react";
 import Layout from "../../components/Layout";
 import ImageCarousel from "./Carousel";
-// import Category from "./Category";
 import styles from "./styles/Homepage.module.css";
 import WhatsApp from "./WhatsApp";
 import TrendingItems from "./TrendingItems";
@@ -9,6 +8,7 @@ import Section from "./Section";
 import About from "./About";
 import Contact from "./Contact";
 import Services from "./Services";
+import Category from "./Category";
 
 function Homepage() {
   const AnimatedSection = ({ children }) => {
@@ -52,26 +52,19 @@ function Homepage() {
             <WhatsApp />
           </center>
         </div>
-        <hr className={styles.hr} />
       </AnimatedSection>
-
-      {/* <Category />
-      <hr className={styles.hr} /> */}
+      <Category />
       <AnimatedSection>
         <TrendingItems />
-        <hr className={styles.hr} />
       </AnimatedSection>
       <AnimatedSection>
         <ImageCarousel />
-        <hr className={styles.hr} />
       </AnimatedSection>
       <AnimatedSection>
         <Services />
-        <hr className={styles.hr} />
       </AnimatedSection>
       <AnimatedSection>
         <About />
-        <hr className={styles.hr} />
       </AnimatedSection>
       <AnimatedSection>
         <Contact />

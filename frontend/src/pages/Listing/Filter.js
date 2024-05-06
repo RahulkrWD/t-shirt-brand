@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-
+import styles from "./styles/Filter.module.css";
 function Filter({ setProducts }) {
   const [sort, setSort] = useState("");
   const [priceRange, setPriceRange] = useState(null);
@@ -38,7 +38,7 @@ function Filter({ setProducts }) {
   };
 
   return (
-    <div>
+    <div className={styles.filter_container}>
       <div>
         <label>
           Sort by:

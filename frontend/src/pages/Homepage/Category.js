@@ -1,41 +1,23 @@
 import React from "react";
-import styles from "./styles/Homepage.module.css";
+import styles from "./styles/Category.module.css";
 import { Link } from "react-router-dom";
+import category from "../../JsonData/Category.json";
 
 function Category() {
-  const category = [
-    {
-      image: " https://i.ibb.co/cQ2p5wM/t-shirt1.jpg",
-      price: 99,
-    },
-    {
-      image: "https://i.ibb.co/jb21zTn/t-shirt2.jpg",
-      price: 149,
-    },
-    {
-      image: "https://i.ibb.co/5Rgmp4h/tshirt-3.jpg",
-      price: 149,
-    },
-    {
-      image: "https://i.ibb.co/jTQCbSp/t-shirt-3.webp",
-      price: 199,
-    },
-  ];
-
   return (
-    <section id="category" className="p-2" style={{ backgroundColor: "pink" }}>
-      <h4 className={styles.category_heading}>Category</h4>
-      <div className={styles.category_container}>
+    <section id="category" className={`p-3 ${styles.category_container}`}>
+      <h4 className="text-center p-2">Category</h4>
+      <div className={styles.category_products}>
         {category.map((data, index) => (
           <Link
             key={index}
-            to={"/category"}
-            className={`text-decoration-none ${styles.category_link}`}
+            // to={"/category"}
+            className={`text-decoration-none  ${styles.category_link}`}
           >
             <img className={styles.category_image} src={data.image} alt="" />
-            <p className={`text-center ${styles.category_price}`}>
-              Starting at <strong> &#8377; {data.price}</strong>
-            </p>
+            <h6 className="text-danger text-center p-3 fw-bold ">
+              {data.name}
+            </h6>
           </Link>
         ))}
       </div>
