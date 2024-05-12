@@ -38,6 +38,7 @@ function Profile() {
           profile.map((item, index) => (
             <div key={index}>
               <h5>{item.name}</h5>
+              <h6>{item.email}</h6>
             </div>
           ))}
       </div>
