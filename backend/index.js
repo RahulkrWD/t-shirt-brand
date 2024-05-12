@@ -4,6 +4,7 @@ const connectDB = require("./db");
 const authRoute = require("./routes/authRoute");
 const cors = require("cors");
 const product = require("./routes/Product");
+const profile = require("./routes/Profile");
 
 const app = express();
 app.use(express.json());
@@ -18,6 +19,7 @@ app.get("/", async function (req, res) {
 // auth router
 app.use("/auth", authRoute);
 app.use("/product", product);
+app.use("/profile", profile);
 
 const PORT = process.env.PORT;
 app.listen(PORT, console.log(`server running on PORT ${PORT}`));

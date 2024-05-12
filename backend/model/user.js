@@ -19,7 +19,17 @@ const userSchema = new mongoose.Schema(
       type: Number,
       require: true,
     },
+    phone: {
+      type: Number,
+    },
+
+    picName: String,
+    size: Number,
+    type: String,
+    data: Buffer,
+    createdAt: { type: Date, default: Date.now },
   },
+
   { timestamps: true }
 );
 
