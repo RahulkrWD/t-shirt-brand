@@ -33,7 +33,6 @@ function Profile() {
 
   return (
     <Layout>
-      <h5>Profile</h5>
       <div>
         {profile &&
           profile.map((item, index) => (

@@ -3,7 +3,7 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import { toast } from "react-hot-toast";
 
-function App() {
+function Photo() {
   const [file, setFile] = useState(null);
   const [photos, setPhotos] = useState([]);
   const { id } = useParams();
@@ -72,4 +72,4 @@ function App() {
   );
 }
 
-export default App;
+export default Photo;
