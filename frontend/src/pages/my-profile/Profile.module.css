@@ -1,0 +1,14 @@
+.profile_container {
+  justify-content: space-around;
+}
+.profile_pic {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border: 2px solid black;
+}
+.profile_image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}

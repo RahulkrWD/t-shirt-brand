@@ -21,13 +21,12 @@ function Profile() {
         `${process.env.REACT_APP_API}/profile/user/profile/${id}`,
         {
           headers: {
-            Authorization: `${user.token}`,
+            Authorization: user.token,
           },
         }
       );
       setProfile(response.data);
     }
-
     handleProfile();
   }, [id, user.token]);
 

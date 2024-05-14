@@ -58,7 +58,7 @@ export default function PrimarySearchAppBar() {
             </MenuItem>,
             <MenuItem key="orders" onClick={handleMenuClose}>
               <Link
-                to="/my-orders"
+                to="/My-order"
                 style={{ textDecoration: "none", color: "inherit" }}
               >
                 My Orders

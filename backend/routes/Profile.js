@@ -11,7 +11,7 @@ const upload = multer({ storage });
 router.get("/get-profile", getProfile.getProfile);
 
 //get each user profile with middleware
-router.get("/user/profile/:id", middleware, getProfile.userProfile);
+router.get("/user/profile/:id", getProfile.userProfile);
 
 // update profile
 router.put("/update-profile/:id", getProfile.updateProfile);
