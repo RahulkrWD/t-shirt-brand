@@ -3,6 +3,7 @@ import Layout from "../../components/Layout";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import Photo from "./Photo";
+import styles from "./Profile.module.css";
 
 function Profile() {
   const [profile, setProfile] = useState();
@@ -32,17 +33,15 @@ function Profile() {
 
   return (
     <Layout>
-      <div>
+      <div className={` p-2 ${styles.profile_container}`}>
+        <Photo />
         {profile &&
           profile.map((item, index) => (
             <div key={index}>
-              <h5>{item.name}</h5>
+              <h5>{item.name.charAt(0).toUpperCase() + item.name.slice(1)}</h5>
               <h6>{item.email}</h6>
             </div>
           ))}
-      </div>
-      <div>
-        <Photo />
       </div>
     </Layout>
   );

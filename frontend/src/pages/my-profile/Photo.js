@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import { toast } from "react-hot-toast";
+import EditProfile from "./EditProfile";
+import styles from "./Profile.module.css";
 
 function Photo() {
   const [file, setFile] = useState(null);
@@ -50,24 +52,23 @@ function Photo() {
 
   return (
     <div>
-      <form onSubmit={onFormSubmit}>
-        <input type="file" name="file" onChange={onChangeHandler} />
-        <button type="submit">Upload</button>
-      </form>
-
       {photos.length > 0 && (
-        <div>
+        <>
           {photos.map((photo, index) => (
             <div key={index}>
               <img
-                style={{ width: "200px", height: "250px" }}
+                className={styles.profile_image}
                 src={`data:${photo.type};base64,${photo.data}`}
                 alt="Profile"
               />
             </div>
           ))}
-        </div>
+        </>
       )}
+      <EditProfile
+        onFormSubmit={onFormSubmit}
+        onChangeHandler={onChangeHandler}
+      />
     </div>
   );
 }

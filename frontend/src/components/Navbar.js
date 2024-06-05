@@ -90,30 +90,68 @@ export default function PrimarySearchAppBar() {
   );
 
   return (
-    <div style={{ position: "sticky", top: "0px", zIndex: "1" }}>
-      <Box sx={{ flexGrow: 1 }}>
-        <AppBar position="static">
-          <Toolbar>
-            <Typography
-              variant="h6"
-              noWrap
-              component="div"
-              sx={{ flexGrow: 1 }}
-            >
-              <Link
-                className="text-light text-decoration-none"
-                to={"/homepage"}
+    <>
+      <div>
+        <h6>Order 499 min and get next order will 100rs off</h6>
+      </div>
+
+      <div style={{ position: "sticky", top: "0px", zIndex: "1" }}>
+        <Box sx={{ flexGrow: 1 }}>
+          <AppBar position="static">
+            <Toolbar>
+              <Typography
+                variant="h6"
+                noWrap
+                component="div"
+                sx={{ flexGrow: 1 }}
               >
-                Nova
+                <Link
+                  className="text-light text-decoration-none"
+                  to={"/homepage"}
+                >
+                  Nova
+                </Link>
+              </Typography>
+
+              <Link to={"/cart"}>
+                <CartIcons />
               </Link>
-            </Typography>
 
-            <Link to={"/cart"}>
-              <CartIcons />
-            </Link>
-
-            <Box sx={{ display: { xs: "none", md: "flex" } }}>
-              {user ? (
+              <Box sx={{ display: { xs: "none", md: "flex" } }}>
+                {user ? (
+                  <IconButton
+                    edge="end"
+                    aria-label="account of current user"
+                    aria-controls={menuId}
+                    aria-haspopup="true"
+                    onClick={handleProfileMenuOpen}
+                    color="inherit"
+                  >
+                    {user.user.name.charAt(0).toUpperCase() +
+                      user.user.name.split(" ")[0].slice(1)}
+                  </IconButton>
+                ) : (
+                  <>
+                    <Button color="inherit">
+                      <Link
+                        to="/login"
+                        style={{ textDecoration: "none", color: "inherit" }}
+                      >
+                        Login
+                      </Link>
+                    </Button>
+                    <Button color="inherit">
+                      <Link
+                        to="/register"
+                        style={{ textDecoration: "none", color: "inherit" }}
+                      >
+                        Register
+                      </Link>
+                    </Button>
+                  </>
+                )}
+              </Box>
+              <Box sx={{ display: { xs: "flex", md: "none" } }}>
                 <IconButton
                   edge="end"
                   aria-label="account of current user"
@@ -122,51 +160,20 @@ export default function PrimarySearchAppBar() {
                   onClick={handleProfileMenuOpen}
                   color="inherit"
                 >
-                  {user.user.name.split(" ")[0]}
+                  {user ? (
+                    <h5 style={{ position: "relative", top: "5px" }}>
+                      {user.user.name.charAt(0).toUpperCase()}
+                    </h5>
+                  ) : (
+                    <i className="fa-solid fa-ellipsis-vertical"></i>
+                  )}
                 </IconButton>
-              ) : (
-                <>
-                  <Button color="inherit">
-                    <Link
-                      to="/login"
-                      style={{ textDecoration: "none", color: "inherit" }}
-                    >
-                      Login
-                    </Link>
-                  </Button>
-                  <Button color="inherit">
-                    <Link
-                      to="/register"
-                      style={{ textDecoration: "none", color: "inherit" }}
-                    >
-                      Register
-                    </Link>
-                  </Button>
-                </>
-              )}
-            </Box>
-            <Box sx={{ display: { xs: "flex", md: "none" } }}>
-              <IconButton
-                edge="end"
-                aria-label="account of current user"
-                aria-controls={menuId}
-                aria-haspopup="true"
-                onClick={handleProfileMenuOpen}
-                color="inherit"
-              >
-                {user ? (
-                  <h5 style={{ position: "relative", top: "5px" }}>
-                    {user.user.name.charAt(0).toUpperCase()}
-                  </h5>
-                ) : (
-                  <i className="fa-solid fa-ellipsis-vertical"></i>
-                )}
-              </IconButton>
-            </Box>
-          </Toolbar>
-        </AppBar>
-        {renderMenu}
-      </Box>
-    </div>
+              </Box>
+            </Toolbar>
+          </AppBar>
+          {renderMenu}
+        </Box>
+      </div>
+    </>
   );
 }
